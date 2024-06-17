@@ -9,3 +9,8 @@ export const REGISTER_FORM_VALIDATION_ERROR_MESSAGES = {
     passwordMatch: 'Passwords do not match',
     emptyRepeatPassword: 'Re-enter password required'
 };
+
+export const REGISTERED_USER = {
+    email: 'test100@gmail.com',
+    password: 'Qwerty123!'
+};

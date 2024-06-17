@@ -29,7 +29,8 @@ module.exports = defineConfig({
     baseURL: process.env.BASE_URL,
     httpCredentials: {
       username: process.env.HTTP_CREDENTIALS_USERNAME,
-      password: process.env.HTTP_CREDENTIALS_PASSWORD
+      password: process.env.HTTP_CREDENTIALS_PASSWORD,
+      storageState: 'state.json'
     },
     //testMatch: 'tests/**.spec.js',
 
@@ -40,8 +41,13 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup',
+      testMatch: /global\.setup\.js/,
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup']
       //testMatch: 'tests/**.spec.js'
     },
 

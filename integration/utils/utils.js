@@ -12,3 +12,14 @@ export const emailGenerator = emailLength => {
     }
     return `aqa_${res}@gmail.com`;
 }
+
+export async function getResponse(response) {
+    if (response.ok()) {
+        const responseData = await response.json();
+        return responseData;  
+    } else {
+        const errorData = await response.json();
+        console.log('Error creating car:', errorData);
+        return errorData;
+    }
+}

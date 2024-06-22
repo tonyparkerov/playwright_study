@@ -18,6 +18,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Create env file
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          HTTP_CREDENTIALS_USERNAME: ${{ secrets.HTTP_CREDENTIALS_USERNAME }}
+          HTTP_CREDENTIALS_PASSWORD: ${{ secrets.HTTP_CREDENTIALS_PASSWORD }}
         run: |
           echo "BASE_URL=${{ secrets.BASE_URL }}" >> .env
           echo "HTTP_CREDENTIALS_USERNAME=${{ secrets.HTTP_CREDENTIALS_USERNAME }}" >> .env
@@ -25,8 +29,4 @@ jobs:
       - name: Print .env file for debugging
         run: cat .env
       - name: Run your tests
-        env:
-          BASE_URL: ${{ secrets.BASE_URL }}
-          HTTP_CREDENTIALS_USERNAME: ${{ secrets.HTTP_CREDENTIALS_USERNAME }}
-          HTTP_CREDENTIALS_PASSWORD: ${{ secrets.HTTP_CREDENTIALS_PASSWORD }}
         run: npx playwright test

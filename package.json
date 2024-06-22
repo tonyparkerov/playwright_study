@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@estruyf/github-actions-reporter": "^1.7.0",
     "dotenv": "^16.4.5",
     "playwright": "^1.44.1"
   },

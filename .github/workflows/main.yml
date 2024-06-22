@@ -23,7 +23,5 @@ jobs:
           echo "BASE_URL=${{ secrets.BASE_URL }}" >> .env
           echo "HTTP_CREDENTIALS_USERNAME=${{ secrets.HTTP_CREDENTIALS_USERNAME }}" >> .env
           echo "HTTP_CREDENTIALS_PASSWORD=${{ secrets.HTTP_CREDENTIALS_PASSWORD }}" >> .env
-      - name: Print .env file for debugging
-        run: cat .env
-      - name: Run your tests
+      - name: Run tests
         run: npx playwright test

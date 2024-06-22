@@ -24,3 +24,7 @@ jobs:
           echo "HTTP_CREDENTIALS_PASSWORD=${{ secrets.HTTP_CREDENTIALS_PASSWORD }}" >> .env
       - name: Run your tests
         run: npx playwright test
+        env:
+          BASE_URL: ${{ secrets.HTTP_CREDENTIALS_USERNAME }}
+          HTTP_CREDENTIALS_USERNAME: ${{ secrets.HTTP_CREDENTIALS_USERNAME }}
+          HTTP_CREDENTIALS_PASSWORD: ${{ secrets.HTTP_CREDENTIALS_PASSWORD }}

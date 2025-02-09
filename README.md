@@ -1,11 +1,76 @@
-                              Playwright testing
+# Playwright Testing Project
 
-Please follow next steps to install and use this project:
+This repository contains automated tests using Playwright, a modern end-to-end testing framework for web applications.
 
-1. Clone repository: `git@github.com:tonyparkerov/playwright_study.git` (f.e. via SSH)
-2. Open repository with project
-3. Install all dependencies: `npm install`
-4. Install browsers: `npx playwright install`
-5. Copy env file: `cp .env.example .env`
-6. Open .env file in any redactor and set your own values for BASE_URL, HTTP_CREDENTIALS_USERNAME, HTTP_CREDENTIALS_PASSWORD
-7. Run tests: `npx playwright test`
+## Prerequisites
+
+- Node.js (latest LTS version recommended)
+- Git
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:tonyparkerov/playwright_study.git
+   cd playwright_study
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Install required browsers:
+   ```bash
+   npx playwright install
+   ```
+
+4. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Configure your environment variables in `.env`:
+   - `BASE_URL`: Your application's base URL
+   - `HTTP_CREDENTIALS_USERNAME`: Username for HTTP authentication
+   - `HTTP_CREDENTIALS_PASSWORD`: Password for HTTP authentication
+
+## Running Tests
+
+Run all tests:
+
+```bash
+npx playwright test
+```
+
+Run tests in UI mode:
+```bash
+npx playwright test --ui
+```
+
+Run tests in a specific browser:
+```bash
+npx playwright test --project=chromium
+```
+
+## Project Structure
+
+```
+├── tests/          # Test files
+├── playwright.config.ts  # Playwright configuration
+└── .env.example    # Example environment variables
+```
+
+## Documentation
+
+For more information about Playwright, visit:
+- [Playwright Documentation](https://playwright.dev/docs/intro)
+- [API Reference](https://playwright.dev/docs/api/class-playwright)
+
+## Contributing
+
+Feel free to submit issues and pull requests.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
